@@ -3,11 +3,28 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 10px; /* 添加间距 */
     }
 
     .image-container img {
+        width: calc(49% - 5px); /* 减去gap的一半 */
+        height: auto; /* 保持宽高比 */
         margin-bottom: 1em;
     }
+    
+    .image-container img:nth-child(odd) {
+        /* 奇数图片靠左 */
+    }
+    
+    .image-container img:nth-child(even) {
+        /* 偶数图片靠右 */
+    }
+    
+    /* 如果某张图片需要占满整行 */
+    .image-container img.full-width {
+        width: 100%;
+    }
+    
     summary {
         font-size: 1.2em;
     }
@@ -31,15 +48,15 @@
 <details>
     <summary>some my loves</summary>
     <div class="image-container">
-        <img src="./picture/124033921_p0.png" align="left" width="49%">
-        <img src="./picture/20241110_211358.jpg" align="right" width="49%">
-        <img src="./picture/20241124_025731.jpg" align="left" width="49%">
-        <img src="./picture/20241124_025911.jpg" align="right" width="49%">
-        <img src="./picture/288968f134d355eb.jpg" align="left" width="49%" height="550">
-        <img src="./picture/FA7JIIuVcAgvFSi.jpg" align="right" width="49%" height="550">
-        <img src="./picture/7373708108136ac0.jpg" align="right" width="49%" height="550">
-        <img src="./picture/79072089_p0.png" align="right" width="49%" height="550">
-        <img src="./picture/698374ffeb2bcb90.jpg" align="right" width="100%">
+        <img src="./picture/124033921_p0.png">
+        <img src="./picture/20241110_211358.jpg">
+        <img src="./picture/20241124_025731.jpg">
+        <img src="./picture/20241124_025911.jpg">
+        <img src="./picture/288968f134d355eb.jpg">
+        <img src="./picture/FA7JIIuVcAgvFSi.jpg">
+        <img src="./picture/7373708108136ac0.jpg">
+        <img src="./picture/79072089_p0.png">
+        <img src="./picture/698374ffeb2bcb90.jpg" class="full-width">
     </div>
 </details>
 
